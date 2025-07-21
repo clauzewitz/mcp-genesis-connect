@@ -23,13 +23,12 @@
 ```
 {
     "servers": {
-        "genesis_info": {
+        "genesis-connect": {
             "command": "python",
             "args": ["-m", "genesis_info"],
             "env": {
                 "GENESIS_API_KEY": "Enter your Genesis API Key here.",
-            },
-            "transport": "stdio"
+            }
         }
     }
 }
