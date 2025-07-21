@@ -5,7 +5,6 @@ from typing import Final, Annotated
 import aiohttp
 from dotenv import load_dotenv
 from fastmcp import FastMCP
-from fastmcp.contrib.mcp_mixin import mcp_tool
 from pydantic import Field
 
 from models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
