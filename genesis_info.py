@@ -1,4 +1,5 @@
 import os
+from typing import Final
 
 import aiohttp
 from dotenv import load_dotenv
@@ -7,14 +8,14 @@ from fastmcp.contrib.mcp_mixin import mcp_tool
 
 from models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
 
-BASE_API_URL = 'https://dev-kr-ccapi.genesis.com:8081/api/v1/car'
+BASE_API_URL: Final = 'https://dev-kr-ccapi.genesis.com:8081/api/v1/car'
 
 if not os.getenv("GENESIS_API_KEY"):
     load_dotenv()
 
-GENESIS_API_KEY = os.getenv("GENESIS_API_KEY")
+GENESIS_API_KEY: Final = str(os.getenv("GENESIS_API_KEY")).strip()
 
-mcp = FastMCP("genesis_info")
+mcp: Final = FastMCP("genesis_info")
 
 
 async def client_session():

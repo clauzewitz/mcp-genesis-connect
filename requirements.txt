@@ -1,4 +1,4 @@
-fastmcp==2.9.2
-aiohttp==3.12.13
-pydantic==2.11.3
-python-dotenv==1.1.0
+fastmcp==2.10.6
+aiohttp==3.12.14
+pydantic==2.11.7
+python-dotenv==1.1.1
