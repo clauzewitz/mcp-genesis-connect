@@ -1,3 +1,4 @@
+import os
 
 import aiohttp
 from dotenv import load_dotenv
@@ -8,7 +9,10 @@ from models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatter
 
 BASE_API_URL = 'https://dev-kr-ccapi.genesis.com:8081/api/v1/car'
 
-load_dotenv()
+if not os.getenv("GENESIS_API_KEY"):
+    load_dotenv()
+
+GENESIS_API_KEY = os.getenv("GENESIS_API_KEY")
 
 mcp = FastMCP("genesis_info")
 
@@ -16,7 +20,7 @@ mcp = FastMCP("genesis_info")
 async def client_session():
     return aiohttp.ClientSession(
         headers={
-            'Authorization': f'Bearer '
+            'Authorization': f'Bearer {GENESIS_API_KEY}'
         }
     )
 
