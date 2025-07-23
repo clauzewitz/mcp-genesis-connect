@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from fastmcp import FastMCP
 from pydantic import Field
 
-from models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
+from src.models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -294,5 +294,12 @@ async def get_car_warning_engine_oil(car_id: Annotated[str, Field(description="v
     except Exception as e:
         return f'차량 정보를 가져올 수 없습니다. 오류: {str(e)}'
 
-if __name__ == "__main__":
+def main():
+    """
+    Main function to run the FastMCP server.
+    """
+    log.info("Starting Genesis Connect MCP server...")
     mcp.run(transport="stdio")
+
+if __name__ == "__main__":
+    main()
