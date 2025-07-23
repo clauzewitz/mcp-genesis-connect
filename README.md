@@ -20,17 +20,37 @@
 
 ## 사용 방법
 
+python 직접 실행
 ```
 {
     "servers": {
         "genesis-connect": {
             "command": "python",
-            "args": ["-m", "genesis_info"],
+            "args": ["-m", "genesis_connect"],
             "env": {
                 "GENESIS_API_KEY": "Enter your Genesis API Key here.",
             }
         }
     }
+}
+```
+
+Docker를 이용한 실행
+```
+{
+    "servers": {
+        "genesis-connect": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "-e",
+                "GENESIS_API_KEY",
+                "genesis-connect:latest"
+            ],
+            "env": {
+                "GENESIS_API_KEY": "Enter your Genesis API Key here.",
 }
 ```
 

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from src.models.type import VehicleType, DistanceUnit, PlugType, TimeUnit, PlugStatus
+from genesis_connect.models.type import VehicleType, DistanceUnit, PlugType, TimeUnit, PlugStatus
 
 
 class Car(BaseModel):
