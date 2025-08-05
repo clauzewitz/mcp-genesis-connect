@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from fastmcp import FastMCP
 from pydantic import Field
 
-from genesis_connect.models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
+from src.genesis_connect.models.car import Car, CarDistance, CarOdometer, CarChargeStatus, CarBatteryStatus, CarWarning, CarConnectedService
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
