@@ -26,7 +26,7 @@ python 직접 실행
     "servers": {
         "genesis-connect": {
             "command": "python",
-            "args": ["-m", "genesis_connect"],
+            "args": ["-m", "src.genesis_connect.server.py"],
             "env": {
                 "GENESIS_API_KEY": "Enter your Genesis API Key here.",
             }
@@ -51,6 +51,9 @@ Docker를 이용한 실행
             ],
             "env": {
                 "GENESIS_API_KEY": "Enter your Genesis API Key here.",
+            }
+        }
+    }
 }
 ```
 
